@@ -55,6 +55,7 @@ def DFS(matrix,visited,start):
         if matrix[start-1][i]==1 and visited[i]==False:
             DFS(matrix,visited,i+1)
 
+
 def BFS(matrix,visited,start):
     queue=deque([start])
     visited[start-1] = True

@@ -44,6 +44,7 @@ def result(N,M,button):
                 second=max(available)
                 second_count+=1
 
+            #print("second click={}".format(click))
             second_count+=abs(N-abs(second))
             third=0
             third_count=0
@@ -61,6 +62,7 @@ def result(N,M,button):
 
                 third_count+=1
             third_count+=abs(N-third)
+           # print(third)
             count=min(MIN,second_count,third_count)
 
         else:
