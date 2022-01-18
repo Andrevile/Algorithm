@@ -1,0 +1,48 @@
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} l1
+ * @param {ListNode} l2
+ * @return {ListNode}
+ */
+var addTwoNumbers = function (l1, l2) {
+  const answer = new ListNode();
+  let n1 = l1;
+  let n2 = l2;
+  let cur = answer;
+  let carry = false;
+
+  let val = n1.val + n2.val; //현재 노드 끼리 더한 값
+  if (val > 9) {
+    //더한 값이 9보다 크면 올림을 해줘야함
+    carry = true;
+    val = val % 10;
+  }
+  cur.val = val; //정답 노드에 더한 값을 할당
+  while (n1.next || n2.next) {
+    n1 = n1.next || new ListNode();
+    n2 = n2.next || new ListNode();
+    cur.next = new ListNode();
+    cur = cur.next;
+    val = n1.val + n2.val;
+    if (carry) {
+      val++;
+      carry = false;
+    }
+    if (val > 9) {
+      carry = true;
+      val = val % 10;
+    }
+    cur.val = val;
+  }
+  if (carry) {
+    cur.next = new ListNode(1);
+  }
+
+  return answer;
+};
