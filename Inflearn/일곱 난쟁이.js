@@ -9,21 +9,21 @@ const input = fs
 
 let answer = solution(input);
 
-// function solution(input) {
-//   let combination = getCombinations(input, 7);
-//   let results = combination.filter((comb) => {
-//     let sum = comb.reduce((acc, cur) => (acc += cur), 0);
-//     if (sum === 100) {
-//       return true;
-//     }
-//   });
+function solution(input) {
+  let combination = getCombinations(input, 7);
+  let results = combination.filter((comb) => {
+    let sum = comb.reduce((acc, cur) => (acc += cur), 0);
+    if (sum === 100) {
+      return true;
+    }
+  });
 
-//   return [...results];
-// }
+  return [...results];
+}
 
-// answer.forEach((list) => {
-//   console.log(list.join(" "));
-// });
+answer.forEach((list) => {
+  console.log(list.join(" "));
+});
 
 function getCombinations(arr, selectNum) {
   const results = [];
