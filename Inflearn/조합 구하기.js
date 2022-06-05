@@ -36,6 +36,7 @@ function solution(n, m) {
   let tmp = Array.from({ length: m }, () => 0);
   function DFS(L, s) {
     if (L === m) {
+      answer.push(tmp.splice());
     } else {
       for (let i = s; i <= n; i++) {
         tmp[L] = i;
