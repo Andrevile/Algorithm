@@ -47,4 +47,5 @@ function solution(s, e) {
       }
     }
   }
+  return answer;
 }
