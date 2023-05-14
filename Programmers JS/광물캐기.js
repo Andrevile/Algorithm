@@ -1,7 +1,6 @@
 function solution(picks, minerals) {
   let answer = 0;
   let remain_pick_count = picks.reduce((acc, cur) => acc + cur);
-  let minerals_current_pointer = 0;
   const sliced_mineral_arr = minerals
     .slice(0, remain_pick_count * 5)
     .reduce((acc, cur, idx) => {
