@@ -1,10 +1,10 @@
 function solution(board) {
   //선공이 'O' 후공이 'X'
-  //     O의 개수-X의 개수=0 or 1
+  // O의 개수-X의 개수=0 or 1
   // O가 이겼다면 O의 개수는 X보다 한 개 많음.
   // X가 이겼다면 O의 개수와 X의 개수는 같음.
   // O와 X는 동시에 이길 수 없음.
-  let answer = 0;
+
   let X_count = 0;
   let O_count = 0;
   let X_isFinish = false;
