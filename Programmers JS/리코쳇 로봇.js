@@ -21,56 +21,6 @@ function solution(board) {
   return queue.length > 0 ? queue[2] : -1;
 }
 
-function DFS(
-  current_row,
-  current_col,
-  board,
-  direction,
-  count,
-  answer_list,
-  depth
-) {
-  if (board[current_row][current_col] === "G") {
-    answer_list.push(count);
-    return;
-  }
-
-  for (let [row, col] of direction) {
-    let next_row = current_row + row;
-    let next_col = current_col + col;
-    while (
-      0 <= next_row &&
-      next_row < board.length &&
-      0 <= next_col &&
-      next_col < board[0].length
-    ) {
-      if (board[next_row][next_col] === "D") {
-        break;
-      }
-      next_row += row;
-      next_col += col;
-    }
-    next_row -= row;
-    next_col -= col;
-    if (next_row === current_row && next_col === current_col) {
-      continue;
-    }
-    if (board[next_row][next_col] !== "X") {
-      board[next_row][next_col] = "X";
-      DFS(
-        next_row,
-        next_col,
-        board,
-        direction,
-        count + 1,
-        answer_list,
-        depth + 1
-      );
-      board[next_row][next_col] = ".";
-    }
-  }
-}
-
 function BFS(board, direction, start_position) {
   const queue = [[...start_position, 0]];
   while (queue.length) {
